@@ -63,6 +63,81 @@ const counterIO = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 document.querySelectorAll('[data-target]').forEach(el => counterIO.observe(el));
 
+// ===== i18n — MOTOR DE TRADUÇÃO =====
+(function () {
+  const T = window.TRANSLATIONS || {};
+  const FI = { pt: 'fi-pt', en: 'fi-gb', fr: 'fi-fr' };
+  const CODE = { pt: 'PT', en: 'EN', fr: 'FR' };
+
+  function translate(lang) {
+    // Texto simples
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (T[key] && T[key][lang]) el.textContent = T[key][lang];
+    });
+    // HTML (conteúdo com tags)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (T[key] && T[key][lang]) el.innerHTML = T[key][lang];
+    });
+    // Atributos (placeholder, title, aria-label)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      const parts = el.dataset.i18nAttr.split(':');
+      const attr = parts[0], key = parts[1];
+      if (T[key] && T[key][lang]) el.setAttribute(attr, T[key][lang]);
+    });
+  }
+
+  function applyLang(lang) {
+    lang = ['pt','en','fr'].includes(lang) ? lang : 'pt';
+
+    // Traduzir conteúdo
+    translate(lang);
+
+    // Actualizar botão do selector
+    const btn = document.getElementById('lang-btn');
+    if (btn) {
+      const flagEl = btn.querySelector('.lang-flag-icon');
+      if (flagEl) flagEl.className = `fi ${FI[lang]} lang-flag-icon`;
+      const codeEl = btn.querySelector('.lang-code');
+      if (codeEl) codeEl.textContent = CODE[lang];
+    }
+
+    // Marcar opção activa no dropdown
+    document.querySelectorAll('.lang-option').forEach(o => {
+      o.classList.toggle('active', o.dataset.lang === lang);
+    });
+
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang === 'en' ? 'en-GB' : 'fr-FR';
+  }
+
+  // Inicializar com idioma guardado — espera DOM completo
+  const saved = localStorage.getItem('lang') || 'pt';
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => applyLang(saved));
+  } else {
+    applyLang(saved);
+  }
+
+  // Botão toggle
+  const btn = document.getElementById('lang-btn');
+  const dropdown = document.getElementById('lang-dropdown');
+  if (btn && dropdown) {
+    const open  = () => { dropdown.classList.add('open');    btn.setAttribute('aria-expanded','true'); };
+    const close = () => { dropdown.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+    btn.addEventListener('click', e => { e.stopPropagation(); dropdown.classList.contains('open') ? close() : open(); });
+    document.addEventListener('click', close);
+    dropdown.addEventListener('click', e => e.stopPropagation());
+    dropdown.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', () => { applyLang(opt.dataset.lang); close(); });
+    });
+  }
+
+  // Expor globalmente para uso noutros scripts
+  window.applyLang = applyLang;
+})();
+
 // ===== CARROCEL DE ÁREAS =====
 (function () {
   const track   = document.getElementById('carousel-track');
@@ -101,8 +176,26 @@ document.querySelectorAll('[data-target]').forEach(el => counterIO.observe(el));
     if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
   });
 
-  // Inicializar
-  goTo(0);
+  // Mapeamento hash → índice do slide
+  const hashMap = {
+    'direito-imobiliario':    0,
+    'sociedades-comerciais':  1,
+    'direito-migratorio':     2,
+    'nacionalidade-portuguesa': 3
+  };
+
+  // Ler hash da URL sem deixar o browser fazer scroll automático
+  const urlHash = window.location.hash.replace('#', '');
+  const startSlide = hashMap[urlHash] ?? 0;
+  goTo(startSlide);
+
+  // Se veio com hash, fazer scroll suave até ao carrocel (não ao slide)
+  if (urlHash && hashMap[urlHash] !== undefined) {
+    setTimeout(() => {
+      const section = document.getElementById('areas-carousel-section');
+      if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  }
 })();
 
 // "Saber mais" — bio expandível na página Sobre
@@ -113,7 +206,15 @@ if (btnSaber && bioExpand) {
     const isOpen = bioExpand.classList.toggle('open');
     btnSaber.setAttribute('aria-expanded', isOpen);
     bioExpand.setAttribute('aria-hidden', !isOpen);
-    btnSaber.querySelector('.btn-saber-mais-label').textContent = isOpen ? 'Saber menos...' : 'Saber mais...';
+    const lang = localStorage.getItem('lang') || 'pt';
+    const T = window.TRANSLATIONS || {};
+    const labelEl = btnSaber.querySelector('.btn-saber-mais-label');
+    const maisKey = 'sobre.saberMais', menosKey = 'sobre.saberMenos';
+    labelEl.textContent = isOpen
+      ? (T[menosKey]?.[lang] || 'Saber menos...')
+      : (T[maisKey]?.[lang]  || 'Saber mais...');
+    if (isOpen) labelEl.setAttribute('data-i18n', menosKey);
+    else        labelEl.setAttribute('data-i18n', maisKey);
     if (isOpen) {
       setTimeout(() => bioExpand.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
     }

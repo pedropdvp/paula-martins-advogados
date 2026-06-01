@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
   <style>
     /* Logotipo 200% maior */
     .logo-img { height: 128px; }
@@ -21,13 +22,31 @@
         <img src="assets/logo.png" alt="Paula Martins Advogados" class="logo-img" />
       </a>
       <ul class="nav-links">
-        <li><a href="/">Início</a></li>
-        <li><a href="sobre.html" class="active">Sobre</a></li>
-        <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
-        <li><a href="artigos.html">Artigos</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-        <li><a href="https://wa.me/351919834640" target="_blank" class="nav-cta">Agendar Consulta</a></li>
+        <li><a href="/" data-i18n="nav.home">Início</a></li>
+        <li><a href="sobre.html" class="active" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="areas-de-atuacao.html" data-i18n="nav.areas">Áreas de Atuação</a></li>
+        <li><a href="artigos.html" data-i18n="nav.articles">Artigos</a></li>
+        <li><a href="contactos.html" data-i18n="nav.contacts">Contactos</a></li>
+        <li><a href="https://wa.me/351919834640" target="_blank" class="nav-cta" data-i18n="nav.cta">Agendar Consulta</a></li>
       </ul>
+      <!-- Selector de idioma -->
+      <div class="lang-selector" id="lang-selector">
+        <button class="lang-current" id="lang-btn" aria-expanded="false" aria-haspopup="true">
+          <span class="fi fi-pt lang-flag-icon"></span><span class="lang-code">PT</span>
+          <svg class="lang-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="menu">
+          <button class="lang-option active" data-lang="pt" data-flag="🇵🇹" data-code="PT" role="menuitem">
+            <span class="fi fi-pt lang-flag-icon"></span><span class="lang-code">PT</span><span class="lang-name">Português</span>
+          </button>
+          <button class="lang-option" data-lang="en" data-flag="🇬🇧" data-code="EN" role="menuitem">
+            <span class="fi fi-gb lang-flag-icon"></span><span class="lang-code">EN</span><span class="lang-name">English</span>
+          </button>
+          <button class="lang-option" data-lang="fr" data-flag="🇫🇷" data-code="FR" role="menuitem">
+            <span class="fi fi-fr lang-flag-icon"></span><span class="lang-code">FR</span><span class="lang-name">Français</span>
+          </button>
+        </div>
+      </div>
       <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -37,19 +56,19 @@
     <button class="close-btn" aria-label="Fechar">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <a href="/">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="areas-de-atuacao.html">Áreas de Atuação</a>
-    <a href="artigos.html">Artigos</a>
-    <a href="contactos.html">Contactos</a>
-    <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold">Agendar Consulta</a>
+    <a href="/" data-i18n="nav.home">Início</a>
+    <a href="sobre.html"><span data-i18n="nav.about">Sobre</span></a>
+    <a href="areas-de-atuacao.html"><span data-i18n="nav.areas">Áreas de Atuação</span></a>
+    <a href="artigos.html"><span data-i18n="nav.articles">Artigos</span></a>
+    <a href="contactos.html"><span data-i18n="nav.contacts">Contactos</span></a>
+    <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold" data-i18n="nav.cta">Agendar Consulta</a>
   </div>
 
   <div class="page-header">
     <div class="container">
       <div class="page-header-inner">
-        <span class="section-eyebrow" style="justify-content:center;">Equipa</span>
-        <h1>Sobre Nós</h1></div></div></div>
+        <span class="section-eyebrow" style="justify-content:center;" data-i18n="sobre.eyebrow">Equipa</span>
+        <h1 data-i18n="sobre.title">Sobre Nós</h1></div></div></div>
 
   <section class="section team-section">
     <div class="container">
@@ -58,23 +77,23 @@
           <img src="assets/paula-nova.jpg" alt="Drª Paula Martins" />
         </div>
         <div class="team-info fade-up delay-2">
-          <span class="section-eyebrow">Advogada Fundadora</span>
+          <span class="section-eyebrow" data-i18n="sobre.founder.eyebrow">Advogada Fundadora</span>
           <h2>Drª Paula Martins</h2>
-          <span class="team-title">Advogada · Ordem dos Advogados Portuguesa</span>
-          <p>A Drª Paula Martins é advogada especializada em Direito Imobiliário, Sociedades Comerciais e Direito Migratório, com mais de uma década de experiência a apoiar clientes nacionais e estrangeiros que pretendem investir, residir ou obter a nacionalidade em Portugal.</p>
-          <p>Com uma abordagem próxima e personalizada, construiu uma reputação de confiança e excelência, especialmente no auxílio a cidadãos estrangeiros que procuram estabelecer-se no Algarve e adquirir propriedades em Portugal.</p>
-          <p>Membro registada na Ordem dos Advogados Portuguesa (Nº 12395L), presta serviços em Português, Inglês e Francês, garantindo comunicação clara e eficiente com clientes de diversas nacionalidades.</p>
+          <span class="team-title" data-i18n="sobre.founder.title">Advogada · Ordem dos Advogados Portuguesa</span>
+          <p data-i18n="sobre.p1">A Drª Paula Martins é advogada especializada em Direito Imobiliário, Sociedades Comerciais e Direito Migratório, com mais de uma década de experiência a apoiar clientes nacionais e estrangeiros que pretendem investir, residir ou obter a nacionalidade em Portugal.</p>
+          <p data-i18n="sobre.p2">Com uma abordagem próxima e personalizada, construiu uma reputação de confiança e excelência, especialmente no auxílio a cidadãos estrangeiros que procuram estabelecer-se no Algarve e adquirir propriedades em Portugal.</p>
+          <p data-i18n="sobre.p3">Membro registada na Ordem dos Advogados Portuguesa (Nº 12395L), presta serviços em Português, Inglês e Francês, garantindo comunicação clara e eficiente com clientes de diversas nacionalidades.</p>
           <!-- Expansão biográfica -->
           <div class="bio-expand" id="bio-expand" aria-hidden="true">
-            <p>Com mais de duas décadas de experiência no Direito e na gestão de pessoas, construí, nos últimos anos, uma trajetória sólida no setor imobiliário, área que veio enriquecer ainda mais os meus conhecimentos.</p>
-            <p>Mais do que resolver questões jurídicas, o que me motiva é o impacto que cada solução tem na vida dos meus clientes. O Direito, para mim, não é apenas uma profissão, mas um meio de transformar realidades.</p>
-            <p>Seja no setor imobiliário, na assessoria jurídica a cidadãos internacionais, ou noutra área do direito, o meu compromisso é claro: descomplicar, orientar e garantir soluções jurídicas seguras, eficazes e personalizadas.</p>
-            <p>Com competência, empatia e dedicação, ajudo os meus clientes a tomar decisões informadas e seguras, seja na aquisição de um imóvel, na obtenção de um visto ou na conquista da nacionalidade portuguesa.</p>
-            <p class="bio-quote">A minha jornada é feita de liderança, paixão e excelência no apoio jurídico que liga pessoas aos seus objetivos.</p>
+            <p data-i18n="sobre.bio1">Com mais de duas décadas de experiência no Direito e na gestão de pessoas, construí, nos últimos anos, uma trajetória sólida no setor imobiliário, área que veio enriquecer ainda mais os meus conhecimentos.</p>
+            <p data-i18n="sobre.bio2">Mais do que resolver questões jurídicas, o que me motiva é o impacto que cada solução tem na vida dos meus clientes. O Direito, para mim, não é apenas uma profissão, mas um meio de transformar realidades.</p>
+            <p data-i18n="sobre.bio3">Seja no setor imobiliário, na assessoria jurídica a cidadãos internacionais, ou noutra área do direito, o meu compromisso é claro: descomplicar, orientar e garantir soluções jurídicas seguras, eficazes e personalizadas.</p>
+            <p data-i18n="sobre.bio4">Com competência, empatia e dedicação, ajudo os meus clientes a tomar decisões informadas e seguras, seja na aquisição de um imóvel, na obtenção de um visto ou na conquista da nacionalidade portuguesa.</p>
+            <p class="bio-quote" data-i18n="sobre.bio5">A minha jornada é feita de liderança, paixão e excelência no apoio jurídico que liga pessoas aos seus objetivos.</p>
           </div>
 
           <button class="btn-saber-mais" id="btn-saber-mais" aria-expanded="false" aria-controls="bio-expand">
-            <span class="btn-saber-mais-label">Saber mais...</span>
+            <span class="btn-saber-mais-label" data-i18n="sobre.saberMais">Saber mais...</span>
             <svg class="btn-saber-mais-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
@@ -82,9 +101,9 @@
 
           <div class="credentials">
             <span class="credential-tag">OA — Nº 12395L</span>
-            <span class="credential-tag">Direito Imobiliário</span>
-            <span class="credential-tag">Direito Migratório</span>
-            <span class="credential-tag">Sociedades Comerciais</span>
+            <span class="credential-tag" data-i18n="area.imob.title">Direito Imobiliário</span>
+            <span class="credential-tag" data-i18n="area.mig.title">Direito Migratório</span>
+            <span class="credential-tag" data-i18n="area.soc.title">Sociedades Comerciais</span>
             <span class="credential-tag">PT · EN · FR</span>
           </div>
         </div>
@@ -95,8 +114,8 @@
   <section class="section" style="background: var(--cream);">
     <div class="container">
       <div class="text-center fade-up" style="margin-bottom: 56px;">
-        <span class="section-eyebrow">Os Nossos Valores</span>
-        <h2 class="section-title">O que nos define</h2>
+        <span class="section-eyebrow" data-i18n="sobre.values.eyebrow">Os Nossos Valores</span>
+        <h2 class="section-title" data-i18n="sobre.values.title">O que nos define</h2>
         <div class="section-divider center"></div>
       </div>
       <div class="values-grid">
@@ -104,22 +123,22 @@
           <div class="area-icon-img">
             <img src="assets/icone_Integridade_1.png" alt="Integridade" />
           </div>
-          <h3>Integridade</h3>
-          <p>Atuamos sempre com honestidade e transparência, colocando os interesses do cliente em primeiro lugar e garantindo uma relação de total confiança.</p>
+          <h3 data-i18n="sobre.v1.title">Integridade</h3>
+          <p data-i18n="sobre.v1.desc">Atuamos sempre com honestidade e transparência, colocando os interesses do cliente em primeiro lugar e garantindo uma relação de total confiança.</p>
         </div>
         <div class="value-card fade-up delay-2">
           <div class="area-icon-img">
             <img src="assets/icone_Excelencia_1.jpg" alt="Excelência" />
           </div>
-          <h3>Excelência</h3>
-          <p>Comprometemo-nos com os mais altos padrões de qualidade jurídica, mantendo-nos atualizados com as mais recentes alterações legislativas.</p>
+          <h3 data-i18n="sobre.v2.title">Excelência</h3>
+          <p data-i18n="sobre.v2.desc">Comprometemo-nos com os mais altos padrões de qualidade jurídica, mantendo-nos atualizados com as mais recentes alterações legislativas.</p>
         </div>
         <div class="value-card fade-up delay-3">
           <div class="area-icon-img">
             <img src="assets/icone_Proximidade_1.jpg" alt="Proximidade" />
           </div>
-          <h3>Proximidade</h3>
-          <p>Cada cliente recebe atenção individualizada. Acompanhamos cada processo de perto, mantendo o cliente informado em cada etapa.</p>
+          <h3 data-i18n="sobre.v3.title">Proximidade</h3>
+          <p data-i18n="sobre.v3.desc">Cada cliente recebe atenção individualizada. Acompanhamos cada processo de perto, mantendo o cliente informado em cada etapa.</p>
         </div>
       </div>
     </div>
@@ -128,11 +147,11 @@
   <div class="cta-banner">
     <div class="container">
       <div class="cta-banner-inner">
-        <h2>Precisa de apoio jurídico especializado?</h2>
-        <p>A nossa equipa está disponível para o ajudar. Contacte-nos e agende a sua consulta.</p>
+        <h2 data-i18n="sobre.cta.title">Precisa de apoio jurídico especializado?</h2>
+        <p data-i18n="sobre.cta.desc">A nossa equipa está disponível para o ajudar. Contacte-nos e agende a sua consulta.</p>
         <div class="cta-banner-actions">
-          <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold">Agendar Consulta</a>
-          <a href="contactos.html" class="btn btn-outline-light">Enviar Mensagem</a>
+          <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold" data-i18n="nav.cta">Agendar Consulta</a>
+          <a href="contactos.html" class="btn btn-outline-light" data-i18n="cta.btn.msg">Enviar Mensagem</a>
         </div>
       </div>
     </div>
@@ -149,49 +168,50 @@
           <p class="footer-about">Escritório de advogados especializado em Direito Imobiliário, Sociedades Comerciais, Direito Migratório e Nacionalidade Portuguesa.</p>
         </div>
         <div class="footer-col">
-          <h5>Menu</h5>
+          <h5 data-i18n="footer.nav">Navegação</h5>
           <ul class="footer-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
-            <li><a href="artigos.html">Artigos</a></li>
-            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="/" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="areas-de-atuacao.html" data-i18n="nav.areas">Áreas de Atuação</a></li>
+            <li><a href="artigos.html" data-i18n="nav.articles">Artigos</a></li>
+            <li><a href="contactos.html" data-i18n="nav.contacts">Contactos</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Áreas</h5>
+          <h5 data-i18n="footer.spec">Especialidades</h5>
           <ul class="footer-links">
-            <li><a href="areas-de-atuacao.html">Direito Imobiliário</a></li>
-            <li><a href="areas-de-atuacao.html">Sociedades Comerciais</a></li>
-            <li><a href="areas-de-atuacao.html">Direito Migratório</a></li>
-            <li><a href="areas-de-atuacao.html">Nacionalidade Portuguesa</a></li>
+            <li><a href="areas-de-atuacao.html#direito-imobiliario" data-i18n="area.imob.title">Direito Imobiliário</a></li>
+            <li><a href="areas-de-atuacao.html#sociedades-comerciais" data-i18n="area.soc.title">Sociedades Comerciais</a></li>
+            <li><a href="areas-de-atuacao.html#direito-migratorio" data-i18n="area.mig.title">Direito Migratório</a></li>
+            <li><a href="areas-de-atuacao.html#nacionalidade-portuguesa" data-i18n="area.nac.title">Nacionalidade Portuguesa</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Contactos</h5>
+          <h5 data-i18n="footer.contacts">Contactos</h5>
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Travessa Zacarias Guerreiro, CC Gilão, Loja 11 · 8800-740 TAVIRA</span>
+              <img src="assets/Icone_morada_1.jpg" alt="Morada" class="footer-icon-img" />
+              <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Zacarias+Guerreiro+Centro+Comercial+Gil%C3%A3o+Loja+11+8800-740+Tavira+Portugal" target="_blank" rel="noopener" class="footer-contact-link">Travessa Zacarias Guerreiro, Centro Comercial Gilão, Loja 11 · 8800-740 Tavira</a>
             </li>
             <li class="footer-contact-item">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.34 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-              <span>(+351) 919 834 640</span>
+              <img src="assets/Icone_WhatsUp_1.jpg" alt="Telefone" class="footer-icon-img" />
+              <a href="https://wa.me/351919834640" target="_blank" rel="noopener" class="footer-contact-link">(+351) 919 834 640</a>
             </li>
             <li class="footer-contact-item">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>paulamartins-12395l@adv.oa.pt</span>
+              <img src="assets/Icone_email_1.jpg" alt="Email" class="footer-icon-img" />
+              <a href="mailto:paulamartins-12395l@adv.oa.pt" class="footer-contact-link">paulamartins-12395l@adv.oa.pt</a>
             </li>
           </ul>
         </div></div>
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2026 Paula Martins Advogados · Todos os direitos reservados</p>
-        <a href="contactos.html">Política de Privacidade</a>
+        <p data-i18n="footer.copy">© 2026 Paula Martins Advogados · Todos os direitos reservados</p>
+        <a href="contactos.html" data-i18n="footer.privacy">Política de Privacidade</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

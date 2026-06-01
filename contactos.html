@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
   <style>
     /* Logotipo 200% maior */
     .logo-img { height: 128px; }
@@ -49,13 +50,31 @@
         <img src="assets/logo.png" alt="Paula Martins Advogados" class="logo-img" />
       </a>
       <ul class="nav-links">
-        <li><a href="/">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
-        <li><a href="artigos.html">Artigos</a></li>
-        <li><a href="contactos.html" class="active">Contactos</a></li>
-        <li><a href="https://wa.me/351919834640" target="_blank" class="nav-cta">Agendar Consulta</a></li>
+        <li><a href="/" data-i18n="nav.home">Início</a></li>
+        <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="areas-de-atuacao.html" data-i18n="nav.areas">Áreas de Atuação</a></li>
+        <li><a href="artigos.html" data-i18n="nav.articles">Artigos</a></li>
+        <li><a href="contactos.html" class="active" data-i18n="nav.contacts">Contactos</a></li>
+        <li><a href="https://wa.me/351919834640" target="_blank" class="nav-cta" data-i18n="nav.cta">Agendar Consulta</a></li>
       </ul>
+      <!-- Selector de idioma -->
+      <div class="lang-selector" id="lang-selector">
+        <button class="lang-current" id="lang-btn" aria-expanded="false" aria-haspopup="true">
+          <span class="fi fi-pt lang-flag-icon"></span><span class="lang-code">PT</span>
+          <svg class="lang-chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="menu">
+          <button class="lang-option active" data-lang="pt" data-flag="🇵🇹" data-code="PT" role="menuitem">
+            <span class="fi fi-pt lang-flag-icon"></span><span class="lang-code">PT</span><span class="lang-name">Português</span>
+          </button>
+          <button class="lang-option" data-lang="en" data-flag="🇬🇧" data-code="EN" role="menuitem">
+            <span class="fi fi-gb lang-flag-icon"></span><span class="lang-code">EN</span><span class="lang-name">English</span>
+          </button>
+          <button class="lang-option" data-lang="fr" data-flag="🇫🇷" data-code="FR" role="menuitem">
+            <span class="fi fi-fr lang-flag-icon"></span><span class="lang-code">FR</span><span class="lang-name">Français</span>
+          </button>
+        </div>
+      </div>
       <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -65,19 +84,19 @@
     <button class="close-btn" aria-label="Fechar">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <a href="/">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="areas-de-atuacao.html">Áreas de Atuação</a>
-    <a href="artigos.html">Artigos</a>
-    <a href="contactos.html">Contactos</a>
-    <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold">Agendar Consulta</a>
+    <a href="/" data-i18n="nav.home">Início</a>
+    <a href="sobre.html"><span data-i18n="nav.about">Sobre</span></a>
+    <a href="areas-de-atuacao.html"><span data-i18n="nav.areas">Áreas de Atuação</span></a>
+    <a href="artigos.html"><span data-i18n="nav.articles">Artigos</span></a>
+    <a href="contactos.html"><span data-i18n="nav.contacts">Contactos</span></a>
+    <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold" data-i18n="nav.cta">Agendar Consulta</a>
   </div>
 
   <div class="page-header">
     <div class="container">
       <div class="page-header-inner">
-        <span class="section-eyebrow" style="justify-content:center;">Fale Connosco</span>
-        <h1>Contactos</h1>
+        <span class="section-eyebrow" style="justify-content:center;" data-i18n="cont.eyebrow">Fale Connosco</span>
+        <h1 data-i18n="cont.title">Contactos</h1>
       </div>
     </div>
   </div>
@@ -88,8 +107,8 @@
 
         <!-- ===== COLUNA ESQUERDA: INFO + BOTÕES ===== -->
         <div>
-          <span class="section-eyebrow">Informações</span>
-          <h2 class="section-title">Como nos pode encontrar</h2>
+          <span class="section-eyebrow" data-i18n="cont.info.eyebrow">Informações</span>
+          <h2 class="section-title" data-i18n="cont.info.title">Como nos pode encontrar</h2>
           <div class="section-divider"></div>
 
           <!-- Morada -->
@@ -98,7 +117,7 @@
               <img src="assets/Icone_morada_1.jpg" alt="Morada" class="contact-icon-img" />
             </div>
             <div>
-              <span class="info-label">Morada</span>
+              <span class="info-label" data-i18n="cont.address.label">Morada</span>
               <div class="info-value">
                 <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Zacarias+Guerreiro+Centro+Comercial+Gil%C3%A3o+Loja+11+8800-740+Tavira+Portugal" target="_blank" rel="noopener">
                   Travessa Zacarias Guerreiro<br>Centro Comercial Gilão, Loja 11<br>8800-740 TAVIRA
@@ -113,7 +132,7 @@
               <img src="assets/Icone_WhatsUp_1.jpg" alt="Telefone / WhatsApp" class="contact-icon-img" />
             </div>
             <div>
-              <span class="info-label">Telefone / WhatsApp</span>
+              <span class="info-label" data-i18n="cont.phone.label">Telefone / WhatsApp</span>
               <div class="info-value">
                 <a href="https://wa.me/351919834640" target="_blank" rel="noopener">(+351) 919 834 640</a>
               </div>
@@ -126,7 +145,7 @@
               <img src="assets/Icone_email_1.jpg" alt="Email" class="contact-icon-img" />
             </div>
             <div>
-              <span class="info-label">Email</span>
+              <span class="info-label" data-i18n="cont.email.label">Email</span>
               <div class="info-value">
                 <a href="mailto:paulamartins-12395l@adv.oa.pt">paulamartins-12395l@adv.oa.pt</a>
               </div>
@@ -141,8 +160,8 @@
               </svg>
             </div>
             <div>
-              <span class="info-label">Horário de Atendimento</span>
-              <p class="info-value">Segunda a Sexta: 9h00 – 18h00<br>Sábado: 9h00 – 13h00 (mediante marcação)</p>
+              <span class="info-label" data-i18n="cont.hours.label">Horário de Atendimento</span>
+              <p class="info-value" data-i18n-html="cont.hours.value">Segunda a Sexta: 9h00 – 18h00<br>Sábado: 9h00 – 13h00 (mediante marcação)</p>
             </div>
           </div>
 
@@ -151,7 +170,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
             </svg>
-            Contactar via WhatsApp
+            <span data-i18n="cont.btn.wa">Contactar via WhatsApp</span>
           </a>
 
           <!-- BOTÃO EMAIL -->
@@ -160,12 +179,12 @@
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            Enviar E-mail
+            <span data-i18n="cont.btn.email">Enviar E-mail</span>
           </a>
 
           <!-- SIGA-NOS -->
           <div style="margin-top:36px; padding-top:28px; border-top:1px solid #e8e3d8;">
-            <span class="info-label" style="display:block; margin-bottom:16px;">Siga-nos</span>
+            <span class="info-label" style="display:block; margin-bottom:16px;" data-i18n="cont.follow">Siga-nos</span>
             <div style="display:flex; gap:12px;">
 
               <!-- Facebook -->
@@ -218,29 +237,29 @@
 
         <!-- ===== COLUNA DIREITA: FORMULÁRIO ===== -->
         <div class="contact-form-card">
-          <h3>Envie-nos uma Mensagem</h3>
-          <p class="form-subtitle">A mensagem será enviada directamente para o nosso email.</p>
+          <h3 data-i18n="cont.form.title">Envie-nos uma Mensagem</h3>
+          <p class="form-subtitle" data-i18n="cont.form.sub">A mensagem será enviada directamente para o nosso email.</p>
           <form class="contact-form" id="contact-form" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="nome">Nome *</label>
-                <input type="text" id="nome" name="nome" placeholder="O seu nome" required />
+                <label for="nome" data-i18n="cont.form.name">Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="O seu nome" data-i18n-attr="placeholder:cont.form.name.ph" required />
               </div>
               <div class="form-group">
-                <label for="apelido">Apelido *</label>
-                <input type="text" id="apelido" name="apelido" placeholder="O seu apelido" required />
+                <label for="apelido" data-i18n="cont.form.surname">Apelido *</label>
+                <input type="text" id="apelido" name="apelido" placeholder="O seu apelido" data-i18n-attr="placeholder:cont.form.surname.ph" required />
               </div>
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="email@exemplo.com" required />
+              <label for="email" data-i18n="cont.form.email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="email@exemplo.com" data-i18n-attr="placeholder:cont.form.email.ph" required />
             </div>
             <div class="form-group">
-              <label for="telefone">Telefone</label>
+              <label for="telefone" data-i18n="cont.form.phone">Telefone</label>
               <input type="tel" id="telefone" name="telefone" placeholder="+351 000 000 000" />
             </div>
             <div class="form-group">
-              <label for="area">Área de Interesse</label>
+              <label for="area" data-i18n="cont.form.area">Área de Interesse</label>
               <select id="area" name="area">
                 <option value="">Seleccione uma área...</option>
                 <option>Direito Imobiliário</option>
@@ -251,10 +270,10 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="mensagem">Mensagem *</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente a sua situação..." required></textarea>
+              <label for="mensagem" data-i18n="cont.form.msg">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente a sua situação..." data-i18n-attr="placeholder:cont.form.msg.ph" required></textarea>
             </div>
-            <button type="submit" class="btn-wa" style="border:none;">Enviar Mensagem</button>
+            <button type="submit" class="btn-wa" style="border:none;" data-i18n="cont.form.send">Enviar Mensagem</button>
           </form>
         </div>
 
@@ -279,10 +298,10 @@
   <div class="cta-banner">
     <div class="container">
       <div class="cta-banner-inner">
-        <h2>Pronto para resolver o seu caso?</h2>
-        <p>Contacte-nos hoje e descubra como podemos ajudar.</p>
+        <h2 data-i18n="cont.cta.title">Pronto para resolver o seu caso?</h2>
+        <p data-i18n="cont.cta.desc">Contacte-nos hoje e descubra como podemos ajudar.</p>
         <div class="cta-banner-actions">
-          <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold">Agendar Consulta</a>
+          <a href="https://wa.me/351919834640" target="_blank" class="btn btn-gold" data-i18n="nav.cta">Agendar Consulta</a>
         </div>
       </div>
     </div>
@@ -296,39 +315,40 @@
             <a href="index.html"><img src="assets/logo.png" alt="Paula Martins Advogados" class="footer-logo-img" /></a>
             <p class="footer-tagline">Escritório de advogados especializado em Direito Imobiliário, Sociedades Comerciais, Direito Migratório e Nacionalidade Portuguesa.</p>
           </div>
-          <div class="footer-col">
-            <h5>Navegação</h5>
+<div class="footer-col">
+            <h5 data-i18n="footer.nav">Navegação</h5>
             <ul class="footer-links">
-              <li><a href="/">Início</a></li>
-              <li><a href="sobre.html">Sobre</a></li>
-              <li><a href="areas-de-atuacao.html">Áreas de Atuação</a></li>
-              <li><a href="artigos.html">Artigos</a></li>
-              <li><a href="contactos.html">Contactos</a></li>
+              <li><a href="/" data-i18n="nav.home">Início</a></li>
+              <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+              <li><a href="areas-de-atuacao.html" data-i18n="nav.areas">Áreas de Atuação</a></li>
+              <li><a href="artigos.html" data-i18n="nav.articles">Artigos</a></li>
+              <li><a href="contactos.html" data-i18n="nav.contacts">Contactos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 data-i18n="footer.spec">Especialidades</h5>
+            <ul class="footer-links">
+              <li><a href="areas-de-atuacao.html#direito-imobiliario" data-i18n="area.imob.title">Direito Imobiliário</a></li>
+              <li><a href="areas-de-atuacao.html#sociedades-comerciais" data-i18n="area.soc.title">Sociedades Comerciais</a></li>
+              <li><a href="areas-de-atuacao.html#direito-migratorio" data-i18n="area.mig.title">Direito Migratório</a></li>
+              <li><a href="areas-de-atuacao.html#nacionalidade-portuguesa" data-i18n="area.nac.title">Nacionalidade Portuguesa</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h5>Especialidades</h5>
-            <ul class="footer-links">
-              <li><a href="areas-de-atuacao.html">Direito Imobiliário</a></li>
-              <li><a href="areas-de-atuacao.html">Sociedades Comerciais</a></li>
-              <li><a href="areas-de-atuacao.html">Direito Migratório</a></li>
-              <li><a href="areas-de-atuacao.html">Nacionalidade Portuguesa</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>Contactos</h5>
+            <h5 data-i18n="footer.contacts">Contactos</h5>
             <ul class="footer-contact-list">
               <li class="footer-contact-item">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Travessa Zacarias Guerreiro, CC Gilão, Loja 11 · 8800-740 Tavira</span>
+                <img src="assets/Icone_morada_1.jpg" alt="Morada" class="footer-icon-img" />
+                <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Zacarias+Guerreiro+Centro+Comercial+Gil%C3%A3o+Loja+11+8800-740+Tavira+Portugal" target="_blank" rel="noopener" class="footer-contact-link">Travessa Zacarias Guerreiro, Centro Comercial Gilão, Loja 11 · 8800-740 Tavira</a>
               </li>
               <li class="footer-contact-item">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.34 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-                <span>(+351) 919 834 640</span>
+                <img src="assets/Icone_WhatsUp_1.jpg" alt="Telefone" class="footer-icon-img" />
+                <a href="https://wa.me/351919834640" target="_blank" rel="noopener" class="footer-contact-link">(+351) 919 834 640</a>
               </li>
               <li class="footer-contact-item">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span>paulamartins-12395l@adv.oa.pt</span>
+                <img src="assets/Icone_email_1.jpg" alt="Email" class="footer-icon-img" />
+                <a href="mailto:paulamartins-12395l@adv.oa.pt" class="footer-contact-link">paulamartins-12395l@adv.oa.pt</a>
               </li>
             </ul>
           </div>
@@ -337,14 +357,15 @@
     </div>
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2026 Paula Martins Advogados · Todos os direitos reservados</p>
+        <p data-i18n="footer.copy">© 2026 Paula Martins Advogados · Todos os direitos reservados</p>
         <div class="footer-bottom-links">
-          <a href="contactos.html">Política de Privacidade</a>
+          <a href="contactos.html" data-i18n="footer.privacy">Política de Privacidade</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -273,6 +273,95 @@ h4 { font-size: 1.25rem; font-weight: 500; }
 }
 .nav-cta::after { display: none !important; }
 
+/* ===== SELECTOR DE IDIOMA ===== */
+.lang-selector {
+  position: relative;
+  flex-shrink: 0;
+}
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.88);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.lang-current:hover,
+.lang-current[aria-expanded="true"] {
+  background: rgba(201,169,110,0.18);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.lang-flag { font-size: 1.1rem; line-height: 1; }
+
+/* Bandeiras reais com flag-icons */
+.lang-flag-icon {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+.lang-option .lang-flag-icon {
+  width: 24px;
+  height: 18px;
+}
+.lang-code { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; }
+.lang-chevron { transition: transform 0.3s ease; opacity: 0.7; }
+.lang-current[aria-expanded="true"] .lang-chevron { transform: rotate(180deg); opacity: 1; }
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  padding: 6px;
+  min-width: 155px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 1100;
+}
+.lang-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.72);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  transition: var(--transition);
+}
+.lang-option:hover { background: rgba(201,169,110,0.12); color: var(--gold); }
+.lang-option.active { color: var(--gold); background: rgba(201,169,110,0.08); }
+.lang-option .lang-code { font-weight: 700; min-width: 24px; }
+.lang-option .lang-name { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
+.lang-option.active .lang-name { color: rgba(201,169,110,0.6); }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -816,6 +905,21 @@ h4 { font-size: 1.25rem; font-weight: 500; }
 }
 .why-icon svg { width: 20px; height: 20px; }
 
+/* Ícone JPG dentro da bola circular */
+.why-icon-img {
+  overflow: hidden;
+  padding: 0;
+}
+.why-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+.why-card:hover .why-icon-img img { transform: scale(1.08); }
+
 .why-card h4 {
   color: var(--white);
   font-size: 1rem;
@@ -1060,17 +1164,31 @@ footer {
 
 .footer-contact-list { display: flex; flex-direction: column; gap: 16px; }
 .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; }
+/* JPG icons in footer */
+.footer-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
 .footer-contact-item svg {
   width: 14px; height: 14px;
   color: var(--gold);
   flex-shrink: 0;
   margin-top: 3px;
 }
-.footer-contact-item span {
+.footer-contact-item span,
+.footer-contact-link {
   color: rgba(255,255,255,0.45);
   font-size: 0.84rem;
   line-height: 1.65;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+.footer-contact-link:hover { color: var(--gold); }
 
 .footer-bottom {
   padding: 22px 0;
