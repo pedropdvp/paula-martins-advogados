@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    TRADUÇÕES — PT / EN / FR
    ============================================================ */
 window.TRANSLATIONS = {
@@ -122,6 +122,7 @@ window.TRANSLATIONS = {
 
   /* ── ARTIGOS PAGE ────────────────────────────────── */
   'art.eyebrow':    { pt: 'Conhecimento Jurídico',  en: 'Legal Knowledge',    fr: 'Connaissances juridiques' },
+  'art.back':       { pt: 'Voltar para Artigos',    en: 'Back to Articles',      fr: 'Retour aux articles' },
   'art.d1': { pt: '15 de Maio, 2026',       en: '15 May 2026',       fr: '15 mai 2026' },
   'art.d2': { pt: '3 de Abril, 2026',       en: '3 April 2026',      fr: '3 avril 2026' },
   'art.d3': { pt: '18 de Março, 2026',      en: '18 March 2026',     fr: '18 mars 2026' },
@@ -207,10 +208,10 @@ window.TRANSLATIONS = {
   'area.nac.li7':  { pt: 'Recursos de indeferimento', en: 'Appeals against refusal', fr: 'Recours contre les refus' },
 
   /* ── ARTIGOS CARDS ───────────────────────────────── */
-  'art.a1.title': { pt: 'Guia Completo para Estrangeiros que Querem Comprar Casa em Portugal', en: 'Complete Guide for Foreigners Wishing to Buy a Home in Portugal', fr: 'Guide complet pour les étrangers souhaitant acheter une maison au Portugal' },
-  'art.a1.desc':  { pt: 'Tudo o que precisa de saber antes de comprar um imóvel em Portugal: documentação necessária, impostos, due diligence e o papel do advogado no processo.', en: 'Everything you need to know before buying a property in Portugal: required documentation, taxes, due diligence and the role of a lawyer in the process.', fr: 'Tout ce que vous devez savoir avant d\'acheter un bien immobilier au Portugal : documentation requise, impôts, due diligence et le rôle de l\'avocat.' },
-  'art.a2.title': { pt: 'Visto D7 em 2026: Requisitos, Processo e Dicas Essenciais', en: 'D7 Visa in 2026: Requirements, Process and Essential Tips', fr: 'Visa D7 en 2026 : Conditions, procédure et conseils essentiels' },
-  'art.a2.desc':  { pt: 'O Visto D7 é uma das principais vias de acesso à residência em Portugal para quem tem rendimentos passivos. Saiba como funciona o processo em 2026.', en: 'The D7 Visa is one of the main routes to residency in Portugal for those with passive income. Find out how the process works in 2026.', fr: 'Le Visa D7 est l\'une des principales voies d\'accès à la résidence au Portugal pour ceux qui disposent de revenus passifs. Découvrez comment fonctionne le processus en 2026.' },
+  'art.a1.title': { pt: 'Pacote Fiscal para a Habitação 2026: o que muda no IVA, IMT, IRS e arrendamento?', en: 'Housing Tax Package 2026: what changes in VAT, IMT, IRS and rental?', fr: 'Pacte fiscal pour le logement 2026 : ce qui change pour la TVA, l\'IMT, l\'IRS et la location ?' },
+  'art.a1.desc':  { pt: '2026 altera fiscalidade<br>Incentivos reforçam habitação<br>Promove o arrendamento moderado<br>Redução dos custos de construção<br>Benefícios exigem requisitos<br>Incumprimento elimina vantagens', en: '2026 changes taxation<br>Incentives strengthen housing<br>Promotes affordable renting<br>Reduces construction costs<br>Benefits require conditions<br>Non-compliance eliminates advantages', fr: '2026 modifie la fiscalité<br>Les incitations renforcent le logement<br>Promeut la location modérée<br>Réduit les coûts de construction<br>Les avantages exigent des conditions<br>Le non-respect élimine les avantages' },
+  'art.a2.title': { pt: 'Novo RJUE: 10 questões essenciais que os juristas devem conhecer', en: 'New RJUE: 10 essential questions that legal professionals must know', fr: 'Nouveau RJUE : 10 questions essentielles que les juristes doivent connaître' },
+  'art.a2.desc':  { pt: 'O RJUE reforça segurança<br>Procedimentos mais rápidos<br>Comunicação prévia reforçada<br>Responsabilidade técnica aumenta<br>Transparência urbanística obrigatória<br>Licenciamento mais simplificado', en: 'The RJUE strengthens security<br>Faster procedures<br>Reinforced prior notification<br>Technical responsibility increases<br>Mandatory urban planning transparency<br>More simplified licensing', fr: 'Le RJUE renforce la sécurité<br>Procédures plus rapides<br>Notification préalable renforcée<br>La responsabilité technique augmente<br>Transparence urbanistique obligatoire<br>Licence plus simplifiée' },
   'art.a3.title': { pt: 'Como Obter a Nacionalidade Portuguesa por Ascendência em 2026', en: 'How to Obtain Portuguese Citizenship by Descent in 2026', fr: 'Comment obtenir la nationalité portugaise par filiation en 2026' },
   'art.a3.desc':  { pt: 'Descendente de portugueses? Saiba quais os documentos necessários, os critérios legais e quanto tempo demora o processo de nacionalidade por ascendência.', en: 'A descendant of Portuguese nationals? Find out what documents are required, the legal criteria and how long the citizenship by descent process takes.', fr: 'Descendant de Portugais ? Découvrez les documents nécessaires, les critères légaux et la durée du processus de nationalité par filiation.' },
   'art.a4.title': { pt: 'Como Constituir uma Empresa em Portugal: Passo a Passo', en: 'How to Set Up a Company in Portugal: A Step-by-Step Guide', fr: 'Comment créer une entreprise au Portugal : étape par étape' },
