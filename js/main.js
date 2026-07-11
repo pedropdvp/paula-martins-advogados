@@ -181,7 +181,8 @@ document.querySelectorAll('[data-target]').forEach(el => counterIO.observe(el));
     'direito-imobiliario':    0,
     'sociedades-comerciais':  1,
     'direito-migratorio':     2,
-    'nacionalidade-portuguesa': 3
+    'nacionalidade-portuguesa': 3,
+    'direito-familia-sucessoes': 4
   };
 
   // Ler hash da URL sem deixar o browser fazer scroll automático
