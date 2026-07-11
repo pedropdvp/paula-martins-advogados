@@ -29,11 +29,15 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      height: 100%;
     }
     @media (max-width: 768px) {
       .contact-info-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+      }
+      .btn-wa, .btn-email {
+        margin-top: 16px !important;
       }
     }
     .contact-section .contact-info-item {
@@ -52,7 +56,7 @@
     /* Estilos de segurança inline — garantem visibilidade independente do CSS externo */
     .btn-wa {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; padding: 15px 24px; margin-bottom: 0;
+      width: 100%; padding: 15px 24px; margin-bottom: 0; margin-top: auto;
       background: #c9a96e; color: #252423; border: none; border-radius: 30px;
       font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
@@ -61,7 +65,7 @@
     .btn-wa:hover { background: #a8854a; }
     .btn-email {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; padding: 15px 24px; margin-bottom: 0;
+      width: 100%; padding: 15px 24px; margin-bottom: 0; margin-top: auto;
       background: #252423; color: #ffffff; border: none; border-radius: 30px;
       font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
