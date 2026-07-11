@@ -12,6 +12,47 @@
   <style>
     /* Logotipo 200% maior */
     .logo-img { height: 128px; }
+
+    /* Custom layout override for contact page */
+    .contact-grid {
+      display: block !important;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+    .contact-section .contact-info-item {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+    .contact-section .contact-info-item:hover {
+      box-shadow: none !important;
+      border: none !important;
+      transform: none !important;
+    }
+    .contact-buttons-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @media (max-width: 576px) {
+      .contact-buttons-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <style>
     /* Estilos de segurança inline — garantem visibilidade independente do CSS externo */
@@ -105,82 +146,88 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- ===== COLUNA ESQUERDA: INFO + BOTÕES ===== -->
+        <!-- ===== COLUNA CENTRALIZADA: INFO + BOTÕES ===== -->
         <div>
           <span class="section-eyebrow" data-i18n="cont.info.eyebrow">Informações</span>
           <h2 class="section-title" data-i18n="cont.info.title">Como nos pode encontrar</h2>
           <div class="section-divider"></div>
 
-          <!-- Morada -->
-          <div class="contact-info-item" style="margin-bottom:20px;">
-            <div class="contact-icon-img-wrap">
-              <img src="assets/Icone_morada_1.jpg" alt="Morada" class="contact-icon-img" />
+          <!-- Grelha 2x2 de Contactos -->
+          <div class="contact-info-grid">
+            <!-- Morada -->
+            <div class="contact-info-item">
+              <div class="contact-icon-img-wrap">
+                <img src="assets/Icone_morada_1.jpg" alt="Morada" class="contact-icon-img" />
+              </div>
+              <div>
+                <span class="info-label" data-i18n="cont.address.label">Morada</span>
+                <div class="info-value">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Zacarias+Guerreiro+Centro+Comercial+Gil%C3%A3o+Loja+11+8800-740+Tavira+Portugal" target="_blank" rel="noopener">
+                    Travessa Zacarias Guerreiro<br>Centro Comercial Gilão, Loja 11<br>8800-740 TAVIRA
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <span class="info-label" data-i18n="cont.address.label">Morada</span>
-              <div class="info-value">
-                <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Zacarias+Guerreiro+Centro+Comercial+Gil%C3%A3o+Loja+11+8800-740+Tavira+Portugal" target="_blank" rel="noopener">
-                  Travessa Zacarias Guerreiro<br>Centro Comercial Gilão, Loja 11<br>8800-740 TAVIRA
-                </a>
+
+            <!-- Telefone / WhatsApp -->
+            <div class="contact-info-item">
+              <div class="contact-icon-img-wrap">
+                <img src="assets/Icone_WhatsUp_1.jpg" alt="Telefone / WhatsApp" class="contact-icon-img" />
+              </div>
+              <div>
+                <span class="info-label" data-i18n="cont.phone.label">Telefone / WhatsApp</span>
+                <div class="info-value">
+                  <a href="https://wa.me/351919834640?text=Olá,%20gostaria%20de%20falar%20consigo%20sobre%20os%20vossos%20serviços" target="_blank" rel="noopener">(+351) 919 834 640</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-icon-img-wrap">
+                <img src="assets/Icone_email_1.jpg" alt="Email" class="contact-icon-img" />
+              </div>
+              <div>
+                <span class="info-label" data-i18n="cont.email.label">Email</span>
+                <div class="info-value">
+                  <a href="mailto:paulamartins-12395l@adv.oa.pt">paulamartins-12395l@adv.oa.pt</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Horário -->
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <span class="info-label" data-i18n="cont.hours.label">Horário de Atendimento</span>
+                <p class="info-value" data-i18n-html="cont.hours.value">Segunda a Sexta: 9h00 – 18h00<br>Sábado: 9h00 – 13h00 (mediante marcação)</p>
               </div>
             </div>
           </div>
 
-          <!-- Telefone -->
-          <div class="contact-info-item" style="margin-bottom:20px;">
-            <div class="contact-icon-img-wrap">
-              <img src="assets/Icone_WhatsUp_1.jpg" alt="Telefone / WhatsApp" class="contact-icon-img" />
-            </div>
-            <div>
-              <span class="info-label" data-i18n="cont.phone.label">Telefone / WhatsApp</span>
-              <div class="info-value">
-                <a href="https://wa.me/351919834640?text=Olá,%20gostaria%20de%20falar%20consigo%20sobre%20os%20vossos%20serviços" target="_blank" rel="noopener">(+351) 919 834 640</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="contact-info-item" style="margin-bottom:20px;">
-            <div class="contact-icon-img-wrap">
-              <img src="assets/Icone_email_1.jpg" alt="Email" class="contact-icon-img" />
-            </div>
-            <div>
-              <span class="info-label" data-i18n="cont.email.label">Email</span>
-              <div class="info-value">
-                <a href="mailto:paulamartins-12395l@adv.oa.pt">paulamartins-12395l@adv.oa.pt</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Horário -->
-          <div class="contact-info-item" style="margin-bottom:32px;">
-            <div class="contact-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          <!-- BOTÕES DE AÇÃO LADO A LADO -->
+          <div class="contact-buttons-row">
+            <!-- BOTÃO WHATSAPP -->
+            <a href="https://wa.me/351919834640?text=Olá,%20gostaria%20de%20falar%20consigo%20sobre%20os%20vossos%20serviços" target="_blank" rel="noopener" class="btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
               </svg>
-            </div>
-            <div>
-              <span class="info-label" data-i18n="cont.hours.label">Horário de Atendimento</span>
-              <p class="info-value" data-i18n-html="cont.hours.value">Segunda a Sexta: 9h00 – 18h00<br>Sábado: 9h00 – 13h00 (mediante marcação)</p>
-            </div>
+              <span data-i18n="cont.btn.wa">Contactar via WhatsApp</span>
+            </a>
+
+            <!-- BOTÃO EMAIL -->
+            <a href="mailto:paulamartins-12395l@adv.oa.pt?subject=Contacto%20via%20Website" class="btn-email">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span data-i18n="cont.btn.email">Enviar E-mail</span>
+            </a>
           </div>
-
-          <!-- BOTÃO WHATSAPP -->
-          <a href="https://wa.me/351919834640?text=Olá,%20gostaria%20de%20falar%20consigo%20sobre%20os%20vossos%20serviços" target="_blank" rel="noopener" class="btn-wa">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-            </svg>
-            <span data-i18n="cont.btn.wa">Contactar via WhatsApp</span>
-          </a>
-
-          <!-- BOTÃO EMAIL -->
-          <a href="mailto:paulamartins-12395l@adv.oa.pt?subject=Contacto%20via%20Website" class="btn-email">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <span data-i18n="cont.btn.email">Enviar E-mail</span>
-          </a>
 
           <!-- SIGA-NOS -->
           <div style="margin-top:36px; padding-top:28px; border-top:1px solid #e8e3d8;">
@@ -233,49 +280,6 @@
             </div>
           </div>
 
-        </div>
-
-        <!-- ===== COLUNA DIREITA: FORMULÁRIO ===== -->
-        <div class="contact-form-card">
-          <h3 data-i18n="cont.form.title">Envie-nos uma Mensagem</h3>
-          <p class="form-subtitle" data-i18n="cont.form.sub">A mensagem será enviada directamente para o nosso email.</p>
-          <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nome" data-i18n="cont.form.name">Nome *</label>
-                <input type="text" id="nome" name="nome" placeholder="O seu nome" data-i18n-attr="placeholder:cont.form.name.ph" required />
-              </div>
-              <div class="form-group">
-                <label for="apelido" data-i18n="cont.form.surname">Apelido *</label>
-                <input type="text" id="apelido" name="apelido" placeholder="O seu apelido" data-i18n-attr="placeholder:cont.form.surname.ph" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email" data-i18n="cont.form.email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="email@exemplo.com" data-i18n-attr="placeholder:cont.form.email.ph" required />
-            </div>
-            <div class="form-group">
-              <label for="telefone" data-i18n="cont.form.phone">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="+351 000 000 000" />
-            </div>
-            <div class="form-group">
-              <label for="area" data-i18n="cont.form.area">Área de Interesse</label>
-              <select id="area" name="area">
-                <option value="">Seleccione uma área...</option>
-                <option>Direito Imobiliário</option>
-                <option>Sociedades Comerciais</option>
-                <option>Direito Internacional Migratório</option>
-                <option>Nacionalidade Portuguesa</option>
-                <option>Direito da Família e Sucessões</option>
-                <option>Outra</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensagem" data-i18n="cont.form.msg">Mensagem *</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente a sua situação..." data-i18n-attr="placeholder:cont.form.msg.ph" required></textarea>
-            </div>
-            <button type="submit" class="btn-wa" style="border:none;" data-i18n="cont.form.send">Enviar Mensagem</button>
-          </form>
         </div>
 
       </div>
